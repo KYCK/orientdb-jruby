@@ -98,7 +98,14 @@ module OrientDB
         if db.schema.exists_class? name
           klass = db.get_class name
         else
-          klass = db.schema.create_class name
+          if use_cluster
+            klass = db.schema.create_class name, use_cluster
+          elsif add_cluster && !db.storage.cluster_names.include?(name.downcase)
+            cluster = db.storage.add_cluster name.downcase, false, {}
+            klass   = db.schema.create_class name, cluster
+          else
+            klass = db.schema.create_class name
+          end
         end
 
         super_klass = fields.delete :super
