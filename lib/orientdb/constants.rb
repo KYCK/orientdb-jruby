@@ -1,9 +1,7 @@
 module OrientDB
   CORE = com.orientechnologies.orient.core
   CLIENT = com.orientechnologies.orient.client
-  SERVER = com.orientechnologies.orient.server
 
-  ClusterType            = CORE.storage.OStorage::CLUSTER_TYPE
   DocumentDatabase       = CORE.db.document.ODatabaseDocumentTx
   DocumentDatabasePool   = CORE.db.document.ODatabaseDocumentPool
   DocumentDatabasePooled = CORE.db.document.ODatabaseDocumentTxPooled
@@ -12,8 +10,6 @@ module OrientDB
   Document               = CORE.record.impl.ODocument
   IndexType              = CORE.metadata.schema.OClass::INDEX_TYPE
   OClassImpl             = CORE.metadata.schema.OClassImpl
-  LocalStorage           = CORE.storage.impl.local.OStorageLocal
-  LocalCluster           = CORE.storage.impl.local.OClusterLocal
   PropertyImpl           = CORE.metadata.schema.OPropertyImpl
   RecordList             = CORE.db.record.ORecordTrackedList
   RecordSet              = CORE.db.record.ORecordTrackedSet
@@ -23,7 +19,6 @@ module OrientDB
   SQLCommand             = CORE.sql.OCommandSQL
   SQLSynchQuery          = CORE.sql.query.OSQLSynchQuery
   User                   = CORE.metadata.security.OUser
-  RemoteStorage          = CLIENT.remote.OStorageRemote
 
   #Blueprints
   BLUEPRINTS = com.tinkerpop.blueprints
@@ -36,7 +31,6 @@ module OrientDB
 
 
   INDEX_TYPES   = IndexType.constants.inject({ }) { |h, s| h[s.downcase.to_sym] = IndexType.const_get s; h }
-  STORAGE_TYPES = ClusterType.constants.inject({ }) { |h, s| h[s.downcase.to_sym] = ClusterType.const_get(s).to_s; h }
   FIELD_TYPES   = SchemaType.constants.inject({ }) { |h, s| h[s.downcase.to_sym] = SchemaType.const_get s; h }
   {
     :bool          => "BOOLEAN",

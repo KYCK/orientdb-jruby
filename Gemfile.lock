@@ -74,3 +74,6 @@ DEPENDENCIES
   jeweler
   pry
   rspec (~> 2.4)
+
+BUNDLED WITH
+   1.15.4
