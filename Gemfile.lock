@@ -70,7 +70,6 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  bundler
   jeweler
   pry
   rspec (~> 2.4)

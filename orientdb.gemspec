@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Madrid"]
-  s.date = "2017-09-06"
+  s.date = "2017-12-14"
   s.description = "Simple JRuby wrapper for the OrientDB."
   s.email = "aemadrid@gmail.com"
   s.executables = ["orientdb_console"]
@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
     "lib/jars/orientdb-client-2.2.26.jar",
     "lib/jars/orientdb-core-2.2.26.jar",
     "lib/jars/orientdb-graphdb-2.2.26.jar",
+    "lib/jars/orientdb-server-2.2.26.jar",
     "lib/jars/pipes-2.6.0.jar",
     "lib/jars/snappy-java-1.1.0.1.jar",
     "lib/orientdb.rb",
@@ -80,20 +81,17 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, ["~> 2.4"])
       s.add_development_dependency(%q<awesome_print>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<pry>, [">= 0"])
     else
       s.add_dependency(%q<rspec>, ["~> 2.4"])
       s.add_dependency(%q<awesome_print>, [">= 0"])
-      s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<pry>, [">= 0"])
     end
   else
     s.add_dependency(%q<rspec>, ["~> 2.4"])
     s.add_dependency(%q<awesome_print>, [">= 0"])
-    s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<pry>, [">= 0"])
   end
